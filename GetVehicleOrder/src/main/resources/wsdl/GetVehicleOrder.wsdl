@@ -1,0 +1,1318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://sales.vehicle.order.naza.com/GetVehicleOrder/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="GetVehicleOrder" targetNamespace="http://sales.vehicle.order.naza.com/GetVehicleOrder/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://sales.vehicle.order.naza.com/GetVehicleOrder/"
+			xmlns:Q1="http://www.starstandard.org/STAR/5">
+			<xsd:element name="GetVehicleOrder">
+				<xsd:complexType>
+					<xsd:sequence>
+
+
+						<xsd:element name="CreatorNameCode" type="xsd:string"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="SenderNameCode" type="xsd:string"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="DealerNumberID" type="xsd:string"
+							maxOccurs="1" minOccurs="1" />
+						<xsd:element name="StoreNumber" type="xsd:string"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="DealerCountryCode" type="xsd:string"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="CreationDateTime" type="xsd:dateTime"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="BODID" type="xsd:string" maxOccurs="1"
+							minOccurs="1">
+						</xsd:element>
+						<xsd:element name="DestinationNameCode" type="xsd:string"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="Expression" type="tns:ExpressionType"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="DocumentID" type="xsd:string"
+							maxOccurs="1" minOccurs="1">
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="releaseID" type="xsd:string"
+						use="optional">
+					</xsd:attribute>
+					<xsd:attribute name="versionID" type="xsd:string"
+						use="optional">
+					</xsd:attribute>
+					<xsd:attribute name="systemEnvironmentCode" type="xsd:string"
+						use="required">
+					</xsd:attribute>
+					<xsd:attribute name="languageCode" type="xsd:string"
+						use="required">
+					</xsd:attribute>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetVehicleOrderResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MessageGuid" type="xsd:string"
+							maxOccurs="1" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="BODID" type="xsd:string" maxOccurs="1"
+							minOccurs="0">
+						</xsd:element>
+						<xsd:element name="FerrariVehicleOrder" type="tns:FerrariVehicleOrderType"
+							maxOccurs="unbounded" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="FerrariVehicleOrderType">
+				<xsd:sequence>
+
+					<xsd:element name="FerrariVehicleOrderHeader" type="tns:FerrariVehicleOrderHeaderType"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="FerrariVehicleOrderVehicleLineItem"
+						type="tns:FerrariVehicleOrderVehicleLineItemType" maxOccurs="unbounded"
+						minOccurs="1"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:element name="GetVehicleOrderFault">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="faultcode" type="xsd:string"
+							maxOccurs="1" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="faultstring" type="xsd:string"
+							maxOccurs="1" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="faultactor" type="xsd:string"
+							maxOccurs="1" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="FerrariVehicleOrderHeaderType">
+				<xsd:sequence>
+					<xsd:element name="DocumentDateTime" type="xsd:dateTime"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DocumentIdentificationGroup" type="tns:DocumentIdentificationGroupType"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="OrderDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleOrderTypeString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SoldToParty" type="tns:PartyABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ShipToParty" type="tns:PartyABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleOrderQtyNumeric" type="xsd:int"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LoadNumberString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BorderCrossingIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PortOfEntry" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ReqDeliveryRangeStartDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ReqDeliveryRangeEndDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CarrierID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="WarehouseID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DealerAssignedNumberString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StatusDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TargetBuildDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PromisedDeliveryDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PromisedShipDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SpecialInstructions" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OrderComments" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PriorityString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Status" type="tns:StatusDetailType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StatusDetail" type="tns:StatusDetailType"
+						maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="FerrariVehicleOrderVehicleLineItemType">
+				<xsd:sequence>
+					<xsd:element name="Vehicle" type="tns:VehicleABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FerrariOption" type="tns:FerrariOptiontemType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StatusDetail" type="tns:StatusDetailType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MarketingInitiativesVO" type="tns:MarketingInitiativesVOType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetAccount" type="tns:FleetAccountType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CertifiedPreownedIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DealerInvoiceDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DeliveryDistanceMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DeliveryRangeEndDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DeliveryRangeStartDate" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="IgnitionKeyNumberString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OrderPriceProtectDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OwnerParty" type="tns:PartyABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PlantCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PlantOrderNumberString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PreviousVIN" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ProductionDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ShipToParty" type="tns:PartyABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleAllocatedDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleLocation" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleOrderNumber" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleOrderQtyNumeric" type="xsd:int"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleShipDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleStatusCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleStockString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="WholesaleDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="DocumentIdentificationGroupType">
+				<xsd:sequence>
+					<xsd:element name="DocumentIdentification" type="tns:DocumentIdentificationType"
+						maxOccurs="1" minOccurs="1"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="DocumentIdentificationType">
+				<xsd:sequence>
+					<xsd:element name="DocumentID" type="xsd:string"
+						maxOccurs="1" minOccurs="1"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<!-- <xsd:complexType name="PartyABIEType"></xsd:complexType> -->
+
+			<xsd:complexType name="PartyABIEType">
+				<xsd:sequence>
+					<xsd:element name="PartyID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LocationID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DealerManagementSystemID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AuthorizationID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="RelationshipTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SpecialRemarksDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AlternatePartyDocument" type="tns:DocumentABIEType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+
+					<xsd:choice>
+						<xsd:sequence>
+							<xsd:element name="SpecifiedOrganization" type="tns:OrganizationABIEType"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="SpecifiedPerson" type="tns:PersonType"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:choice>
+					<xsd:element name="Privacy" type="tns:PrivacyType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PreferredLanguageCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ManufacturerCustomerID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ManufacturerHouseholdID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PartyActionEvent" type="tns:EventType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DealerIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="DocumentABIEType">
+				<xsd:sequence>
+					<xsd:element name="DocumentID" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="DocumentType" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="IssuingName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EffectivePeriod" type="tns:PeriodABIEType"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PeriodABIEType">
+				<xsd:sequence>
+					<xsd:element name="DurationMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="InclusiveIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StartDateTime" type="xsd:dateTime"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EndDateTime" type="xsd:dateTime"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CompleteDateTime" type="xsd:dateTime"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OpenIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DayOfWeekCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="OrganizationABIEType">
+				<xsd:sequence>
+					<xsd:element name="BusinessTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CompanyName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OrganizationID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DistrictID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BranchCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CompanyCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DivisionCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ServiceCenterCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="HoldingCompanyName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PrimaryContact" type="tns:ContactABIEType"
+						maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ContactABIEType">
+				<xsd:sequence>
+					<xsd:element name="ID" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="JobTitle" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Responsibility" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DepartmentName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:choice>
+						<xsd:sequence>
+							<xsd:element name="PersonName" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="SpecifiedPerson" type="tns:PersonType"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:choice>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PersonType">
+				<xsd:sequence>
+					<xsd:element name="ID" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GivenName" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Alias" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MiddleName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FamilyName" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Title" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Salutation" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="NameSuffix" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MaritalStatusCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GenderCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BirthDate" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AgeMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MaidenName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PreferredName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ResidenceAddress" type="tns:AddressABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TelephoneCommunication" type="tns:CommunicationABIEType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FaxCommunication" type="tns:CommunicationABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="URICommunication" type="tns:CommunicationABIEType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="NationalityCountryID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ContactMethodTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LanguageCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PostalAddress" type="tns:AddressABIEType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OriginalContactMethodTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SpecifiedOccupation" type="tns:OccupationABIEType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Trait" type="tns:TraitType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CustomerStatusCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DateOfBirthToleranceNumeric" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="AddressABIEType">
+				<xsd:sequence>
+					<xsd:element name="AddressID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AddressType" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AttentionOf" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CareOf" type="xsd:string" maxOccurs="unbounded"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:choice>
+						<xsd:sequence>
+							<xsd:element name="LineOne" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="LineTwo" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="LineThree" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="LineFour" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="LineFive" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="BuildingNumber" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="BuildingName" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="StreetName" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="FloorIdentification" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="PostOfficeBox" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="BuildingNumberSuffix" type="xsd:string"
+								maxOccurs="1" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:choice>
+					<xsd:element name="CitySub-DivisionName" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CityName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CountryID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Postcode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StateOrProvinceCountrySub-DivisionID"
+						type="xsd:string" maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CountyCountrySub-Division" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AddressUpdateDateTime" type="xsd:dateTime"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Privacy" type="tns:PrivacyType"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CommunicationABIEType">
+				<xsd:sequence>
+					<xsd:element name="URIID" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ChannelCode" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="LocalNumber" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CompleteNumber" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CountryNumberCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ExtensionNumber" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AreaNumberCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Access" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="UseCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ServiceProviderName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="HTMLPreferredIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="UsagePreference" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Privacy" type="tns:PrivacyType"
+						maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="OccupationABIEType">
+				<xsd:sequence>
+					<xsd:element name="TypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Title" type="xsd:string" maxOccurs="unbounded"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Description" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ClassCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="RankingCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FullTimeIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PeriodHeld" type="tns:PeriodABIEType"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="TraitType">
+				<xsd:sequence>
+					<xsd:element name="TraitText" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TraitGroupCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TraitTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PrivacyType">
+				<xsd:sequence>
+					<xsd:element name="PrivacyIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PrivacyTypeString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PrivacyPeriod" type="tns:PeriodABIEType"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="EventType">
+				<xsd:sequence>
+					<xsd:element name="EventID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EventTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EventDescription" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EventOccurrenceDateTime" type="xsd:dateTime"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="StatusDetailType">
+				<xsd:sequence>
+					<xsd:element name="StatusCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StatusText" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ItemQuantity" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ShipWarehouseNumeric" type="xsd:int"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="VehicleABIEType">
+				<xsd:sequence>
+					<xsd:element name="Model" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelYear" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MakeString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SaleClassCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Condition" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleNote" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TrimCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DoorsQuantityNumeric" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BodyStyle" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TransmissionGroup" type="tns:TransmissionGroupType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ColorGroup" type="tns:ColorGroupType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleClassCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FuelTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DriveTrain" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DriveTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehiclePassengersNumeric" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Engine" type="tns:EngineType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AxleCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ManufacturerName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GrossWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="UnloadedVehicleWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelGroup" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelYearChangeIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DistributorModelCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelClass" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="RegistrationID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleLengthMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Chassis" type="tns:ChassisType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SeriesCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SeriesName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleStockString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DryWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="WetWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Tank" type="tns:TankType" maxOccurs="unbounded"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MaximumSpeedMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleDimension" type="tns:DimensionType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="WheelBaseMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TurningRadiusMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GroundClearanceMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SeatHeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TowingCapacityWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CertificationGroup" type="tns:CertificationGroupType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PayloadCapacityWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="InteriorDescription" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="FerrariOptiontemType">
+				<xsd:sequence>
+					<xsd:element name="OptionID" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="OptionTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="OptionName" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="OptionColorCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OptionColorDescription" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="MarketingInitiativesVOType">
+				<xsd:sequence>
+					<xsd:element name="InitiativeTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="InitiativeID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ReimbursementID" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ReimbursementComment" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ReimbursementAmount" type="tns:AmountType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ReimbursementPayeeName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetAccountString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="InitiativeDate" type="xsd:date"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="InitiativeChangeIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="AmountType">
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:decimal">
+						<xsd:attribute name="currencyID" type="xsd:string"
+							use="required" />
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="FleetAccountType">
+				<xsd:sequence>
+					<xsd:element name="FleetAccountString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetVehicleID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetPurchaseOrderNumberString"
+						type="xsd:string" maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetAvailableIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetOnlyIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="RegistrationFleetID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetAccountCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FleetQuantity" type="tns:FleetQuantityType"
+						maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="FleetQuantityType">
+				<xsd:sequence>
+					<xsd:element name="FleetCountNumeric" type="xsd:int"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="MakeString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleClassCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="TransmissionGroupType">
+				<xsd:sequence>
+					<xsd:element name="TransmissionCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TransmissionTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TransmissionTypeName" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ColorGroupType">
+				<xsd:sequence>
+					<xsd:element name="ColorItemCode" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="ManufacturerColorCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ColorDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ColorName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ColorCodeChangeIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="EngineType">
+				<xsd:sequence>
+					<xsd:element name="MakeString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ModelYear" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SaleClassCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Condition" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Model" type="xsd:string" maxOccurs="1"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VehicleStockString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ColorGroup" type="tns:ColorGroupType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BoatEngineTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FuelTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FullThrottleOperatingRangeMaximumMeasure"
+						type="xsd:string" maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="IdleRevolutionPerMinuteForwardGearMinimumMeasure"
+						type="xsd:string" maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="AlternatorOutputMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BatterySizeRequirementsMeasure"
+						type="xsd:string" maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CurrentDrawMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PeakThrustMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BoreMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StrokeMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CylinderConfigurationCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="NumberOfEngineCylindersNumeric"
+						type="xsd:int" maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FuelInductionSystemCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="BoatEngineLocationCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="FuelConsumptionMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TotalEngineHoursNumeric" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PowerTrimIndicator" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="StartingSystemTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="IgnitionSystem" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LubricationSystem" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CoolingSystem" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Emissions" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SteeringSystem" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PropellerType" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GeneralEngineDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DetailedEngineDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DriveTransmissionDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EngineSerialString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DriveSerialString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TransomShieldKitSerialString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="VDriveSerialString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TransmissionSerialString" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DryWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="WetWeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ShaftLengthMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EffectiveMeanPressureMeasure" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="PowerMeasure" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MeanPistonSpeedMeasure" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CompressionPressureMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TorqueMeasure" type="tns:MeasurementType"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GearRatioGroup" type="tns:GearRatioGroupType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EngineDimensions" type="tns:EngineDimensionsType"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DisplacementMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="OperatingVoltageMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CompressionRatioMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="MeasurementType">
+				<xsd:sequence>
+					<xsd:element name="PressureMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="SpeedMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="ElectricityMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="MechanicalEnergyMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LocationID" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LocationName" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="GearRatioGroupType">
+				<xsd:sequence>
+					<xsd:element name="GearRatio" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="GearRatioDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="EngineDimensionsType">
+				<xsd:sequence>
+					<xsd:element name="EngineDimensionDescription" type="xsd:string"
+						maxOccurs="unbounded" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EngineHeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EngineWidthMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="EngineDepthMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ChassisType">
+				<xsd:sequence>
+					<xsd:element name="ChassisMake" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="ChassisModel" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="TankType">
+				<xsd:sequence>
+					<xsd:element name="TankUsageCode" type="xsd:string"
+						maxOccurs="1" minOccurs="1">
+					</xsd:element>
+					<xsd:element name="TankMaterialCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TankCapacityMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="TankCountNumeric" type="xsd:int"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="DimensionType">
+				<xsd:sequence>
+					<xsd:element name="DimensionValueMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DimensionTypeCode" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DimensionDescription" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="WidthMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="LengthMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="HeightMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="DiameterMeasure" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="CertificationGroupType">
+				<xsd:sequence>
+					<xsd:element name="CertificationIssuerName" type="xsd:string"
+						maxOccurs="1" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="CertificationValue" type="xsd:string"
+						maxOccurs="1" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ExpressionType">
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:string">
+						<xsd:attribute name="expressionLanguage" type="xsd:string"
+							use="optional" />
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetVehicleOrderRequest">
+		<wsdl:part element="tns:GetVehicleOrder" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetVehicleOrderResponse">
+		<wsdl:part element="tns:GetVehicleOrderResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetVehicleOrderFault">
+		<wsdl:part name="parameters" element="tns:GetVehicleOrderFault"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GetVehicleOrder">
+		<wsdl:operation name="GetVehicleOrder">
+			<wsdl:input message="tns:GetVehicleOrderRequest" />
+			<wsdl:output message="tns:GetVehicleOrderResponse" />
+			<wsdl:fault name="fault" message="tns:GetVehicleOrderFault"></wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GetVehicleOrderSOAP" type="tns:GetVehicleOrder">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetVehicleOrder">
+			<soap:operation
+				soapAction="http://sales.vehicle.order.naza.com/GetVehicleOrder/GetVehicleOrder" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GetVehicleOrder">
+		<wsdl:port binding="tns:GetVehicleOrderSOAP" name="GetVehicleOrderSOAP">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
