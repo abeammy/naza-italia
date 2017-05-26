@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/mohammadziaul/Downloads/apache-cxf-3.1.10.tar/apache-cxf-3.1.10/lib/cxf-rt-bindings-soap-3.1.10.jar" sourcepath="C:/Users/mohammadziaul/.m2/repository/org/apache/cxf/cxf-rt-bindings-soap/3.1.10/cxf-rt-bindings-soap-3.1.10-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

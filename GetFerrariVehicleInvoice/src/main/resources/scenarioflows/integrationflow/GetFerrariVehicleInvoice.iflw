@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- origin at X=0.0 Y=0.0 -->
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ifl="http:///com.sap.ifl.model/Ifl.xsd" xmlns:ns="http://www.w3.org/2001/XMLSchema" id="Definitions_1" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.2.5.Final-v20160831-1132-B114" name="Definitions 1" targetNamespace="http://com.sap.it.ifl.tooling/default/flow">
+  <bpmn2:extensionElements>
+    <ifl:property>
+      <key>IntegrationFlowVersion</key>
+      <value>1.0</value>
+    </ifl:property>
+  </bpmn2:extensionElements>
+  <bpmn2:collaboration id="Collaboration_1" name="Default Collaboration">
+    <bpmn2:extensionElements>
+      <ifl:property>
+        <key>routeid</key>
+        <value>MyProject</value>
+      </ifl:property>
+      <ifl:property>
+        <key>errorStrategy</key>
+        <value>None</value>
+      </ifl:property>
+      <ifl:property>
+        <key>namespaceMapping</key>
+        <value>xmlns:p1=http://sales.invoice.naza.com/GetFerrariVehicleInvoice/</value>
+      </ifl:property>
+      <ifl:property>
+        <key>returnExceptionToSender</key>
+        <value>true</value>
+      </ifl:property>
+    </bpmn2:extensionElements>
+    <bpmn2:participant id="Participant_1" ifl:type="EndpointSender" name="Sender">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>cmdVariantUri</key>
+          <value>ctype::FlowstepVariant/cname::Sender/version::1.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>componentVersion</key>
+          <value>1.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ifl:type</key>
+          <value>EndpointSender</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:participant>
+    <bpmn2:participant id="Participant_3" ifl:type="IntegrationProcess" name="Integration Process" processRef="Process_1"/>
+    <bpmn2:participant id="Participant_2" ifl:type="EndpointRecevier" name="FerrariWS"/>
+    <bpmn2:messageFlow id="MessageFlow_1" name="" sourceRef="Participant_1" targetRef="StartEvent_1">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>Name</key>
+          <value>SAPSOAPRequest</value>
+        </ifl:property>
+        <ifl:property>
+          <key>Description</key>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentType</key>
+          <value>SOAP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocol</key>
+          <value>HTTP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocolVersion</key>
+          <value>1.0.5</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocol</key>
+          <value>SOAP 1.x</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocolVersion</key>
+          <value>1.2.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>componentVersion</key>
+          <value>1.2</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentNS</key>
+          <value>sap</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVId</key>
+          <value>1.2.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVName</key>
+          <value>1.2.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>address</key>
+          <value>/GetFerrariVehicleInvoice</value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapWsdlURL</key>
+          <value>/wsdl/GetFerrariVehicleInvoice.wsdl</value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapServiceName</key>
+          <value>p1:GetFerrariVehicleInvoice</value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapWsdlPortName</key>
+          <value>p1:GetFerrariVehicleInvoiceSOAP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapOptions</key>
+          <value>cxfRobust</value>
+        </ifl:property>
+        <ifl:property>
+          <key>senderAuthType</key>
+          <value>RoleBased</value>
+        </ifl:property>
+        <ifl:property>
+          <key>userRole</key>
+          <value>ESBMessaging.send</value>
+        </ifl:property>
+        <ifl:property>
+          <key>WSSecurity</key>
+          <value>None</value>
+        </ifl:property>
+        <ifl:property>
+          <key>WSSecurityType</key>
+          <value>VerifyMessage</value>
+        </ifl:property>
+        <ifl:property>
+          <key>SaveIncomingSignedMessage</key>
+          <value>0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>CheckTimeStamp</key>
+          <value>0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>SenderBasicSecurityProfileCompliant</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>PrivateKeyAliasResponseSigning</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>PublicKeyAliasResponseEncryption</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>InitiatorTokenIncludeStrategy</key>
+          <value>AlwaysToRecipient</value>
+        </ifl:property>
+        <ifl:property>
+          <key>X509TokenAssertion</key>
+          <value>WssX509V3Token10</value>
+        </ifl:property>
+        <ifl:property>
+          <key>RecipientTokenIncludeStrategy</key>
+          <value>Never</value>
+        </ifl:property>
+        <ifl:property>
+          <key>AlgorithmSuiteAssertion</key>
+          <value>Basic128Rsa15</value>
+        </ifl:property>
+        <ifl:property>
+          <key>maximumBodySize</key>
+          <value>40</value>
+        </ifl:property>
+        <ifl:property>
+          <key>maximumAttachmentSize</key>
+          <value>100</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:messageFlow>
+    <bpmn2:messageFlow id="MessageFlow_2" sourceRef="ServiceTask_1" targetRef="Participant_2">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>Name</key>
+          <value>FerrariWS</value>
+        </ifl:property>
+        <ifl:property>
+          <key>Description</key>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentType</key>
+          <value>SOAP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocol</key>
+          <value>HTTP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocolVersion</key>
+          <value>1.0.5</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocol</key>
+          <value>SOAP 1.x</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocolVersion</key>
+          <value>1.0.5</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentNS</key>
+          <value>sap</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVId</key>
+          <value>1.2.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVName</key>
+          <value>1.2.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>address</key>
+          <value>https://testservices.dms.ferrari.com:64003/GetFerrariVehicleInvoice</value>
+        </ifl:property>
+        <ifl:property>
+          <key>proxyType</key>
+          <value>default</value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapWsdlURL</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapServiceName</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>soapWsdlPortName</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>requestTimeout</key>
+          <value>60000</value>
+        </ifl:property>
+        <ifl:property>
+          <key>CompressMessage</key>
+          <value>0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>allowChunking</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>enableAnonymous</key>
+          <value>0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>enableBasicAuthentication</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>WSSecurity_outbound</key>
+          <value>None</value>
+        </ifl:property>
+        <ifl:property>
+          <key>UserNameTokenOption</key>
+          <value>None</value>
+        </ifl:property>
+        <ifl:property>
+          <key>UserNameTokenCredentialName</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>WsdlUserNameTokenCredentialName</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>WSSecurityType_outbound</key>
+          <value>SignMessage</value>
+        </ifl:property>
+        <ifl:property>
+          <key>SetTimeStamp</key>
+          <value>0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>PrivateKeyAliasSigning_wsdl</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>PublicKeyAliasEncryption_wsdl</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>SenderBasicSecurityProfileCompliant_wsdl</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>SenderBasicSecurityProfileCompliant</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>PrivateKeyAliasSigning</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>PublicKeyAliasEncryption</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>InitiatorTokenIncludeStrategy_outbound</key>
+          <value>AlwaysToRecipient</value>
+        </ifl:property>
+        <ifl:property>
+          <key>X509TokenAssertion</key>
+          <value>WssX509V3Token10</value>
+        </ifl:property>
+        <ifl:property>
+          <key>RecipientTokenIncludeStrategy</key>
+          <value>Never</value>
+        </ifl:property>
+        <ifl:property>
+          <key>recipientX509TokenAssertion</key>
+          <value>WssX509V3Token10</value>
+        </ifl:property>
+        <ifl:property>
+          <key>Layout_outbound</key>
+          <value>Strict</value>
+        </ifl:property>
+        <ifl:property>
+          <key>AlgorithmSuiteAssertion</key>
+          <value>Basic128Rsa15</value>
+        </ifl:property>
+        <ifl:property>
+          <key>privateKeyAlias</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>credentialName</key>
+          <value>FerrariAuthPhase2</value>
+        </ifl:property>
+        <ifl:property>
+          <key>proxyHost</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>proxyPort</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>operationName</key>
+          <value></value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:messageFlow>
+  </bpmn2:collaboration>
+  <bpmn2:process id="Process_1" name="Integration Process" isExecutable="false">
+    <bpmn2:extensionElements>
+      <ifl:property>
+        <key>cmdVariantUri</key>
+        <value>ctype::FlowElementVariant/cname::IntegrationProcess/version::1.1.1</value>
+      </ifl:property>
+      <ifl:property>
+        <key>transactionTimeout</key>
+        <value>30</value>
+      </ifl:property>
+      <ifl:property>
+        <key>componentVersion</key>
+        <value>1.1.1</value>
+      </ifl:property>
+      <ifl:property>
+        <key>transactionalHandling</key>
+        <value>Required</value>
+      </ifl:property>
+    </bpmn2:extensionElements>
+    <bpmn2:startEvent id="StartEvent_1" name="Start">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>cmdVariantUri</key>
+          <value>ctype::FlowstepVariant/cname::MessageStartEvent/version::1.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>componentVersion</key>
+          <value>1.0</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
+      <bpmn2:messageEventDefinition id="MessageEventDefinition_1"/>
+    </bpmn2:startEvent>
+    <bpmn2:endEvent id="EndEvent_1" name="End">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>cmdVariantUri</key>
+          <value>ctype::FlowstepVariant/cname::MessageEndEvent/version::1.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>componentVersion</key>
+          <value>1.0</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+      <bpmn2:messageEventDefinition id="MessageEventDefinition_2"/>
+    </bpmn2:endEvent>
+    <bpmn2:serviceTask id="ServiceTask_1" name="Request-Reply">
+      <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_5" sourceRef="CallActivity_4" targetRef="ServiceTask_1"/>
+    <bpmn2:callActivity id="CallActivity_4" name="Script">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>activityType</key>
+          <value>Script</value>
+        </ifl:property>
+        <ifl:property>
+          <key>script</key>
+          <value>setRequest.groovy</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
+    </bpmn2:callActivity>
+    <bpmn2:sequenceFlow id="SequenceFlow_6" sourceRef="StartEvent_1" targetRef="CallActivity_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="CallActivity_5" targetRef="EndEvent_1"/>
+    <bpmn2:callActivity id="CallActivity_5" name="Script">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>activityType</key>
+          <value>Script</value>
+        </ifl:property>
+        <ifl:property>
+          <key>script</key>
+          <value>setResponse.groovy</value>
+        </ifl:property>
+        <ifl:property>
+          <key>scriptFunction</key>
+          <value>processData</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+    </bpmn2:callActivity>
+    <bpmn2:sequenceFlow id="SequenceFlow_8" sourceRef="ServiceTask_1" targetRef="CallActivity_5"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1" name="Default Collaboration Diagram">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1">
+      <bpmndi:BPMNShape id="BPMNShape_Participant_1" bpmnElement="Participant_1" isHorizontal="false">
+        <dc:Bounds height="140.0" width="100.0" x="40.0" y="100.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_1">
+          <dc:Bounds height="15.0" width="40.0" x="70.0" y="103.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Participant_3" bpmnElement="Participant_3" isHorizontal="false">
+        <dc:Bounds height="183.0" width="761.0" x="200.0" y="68.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_3">
+          <dc:Bounds height="15.0" width="107.0" x="527.0" y="71.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Participant_2" bpmnElement="Participant_2" isHorizontal="false">
+        <dc:Bounds height="140.0" width="100.0" x="323.0" y="322.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_21">
+          <dc:Bounds height="15.0" width="55.0" x="345.0" y="325.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="StartEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="220.0" y="158.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_4">
+          <dc:Bounds height="15.0" width="25.0" x="225.0" y="194.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="770.0" y="158.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_5">
+          <dc:Bounds height="15.0" width="22.0" x="777.0" y="194.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ServiceTask_1" bpmnElement="ServiceTask_1">
+        <dc:Bounds height="50.0" width="110.0" x="450.0" y="151.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_11">
+          <dc:Bounds height="15.0" width="82.0" x="464.0" y="168.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_CallActivity_4" bpmnElement="CallActivity_4" isExpanded="true">
+        <dc:Bounds height="60.0" width="100.0" x="315.0" y="146.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_8">
+          <dc:Bounds height="15.0" width="31.0" x="349.0" y="168.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_CallActivity_5" bpmnElement="CallActivity_5" isExpanded="true">
+        <dc:Bounds height="60.0" width="100.0" x="618.0" y="146.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_19">
+          <dc:Bounds height="15.0" width="31.0" x="652.0" y="168.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_1" bpmnElement="MessageFlow_1" sourceElement="BPMNShape_Participant_1" targetElement="BPMNShape_StartEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="140.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="180.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="220.0" y="176.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_7">
+          <dc:Bounds height="15.0" width="32.0" x="165.0" y="177.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_CallActivity_4" targetElement="BPMNShape_ServiceTask_1">
+        <di:waypoint xsi:type="dc:Point" x="415.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="432.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="450.0" y="176.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_2"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_CallActivity_4">
+        <di:waypoint xsi:type="dc:Point" x="256.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="285.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="315.0" y="176.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_17"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_CallActivity_5" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="718.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="744.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="770.0" y="176.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_ServiceTask_1" targetElement="BPMNShape_CallActivity_5">
+        <di:waypoint xsi:type="dc:Point" x="560.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="589.0" y="176.0"/>
+        <di:waypoint xsi:type="dc:Point" x="618.0" y="176.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_20"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_2" bpmnElement="MessageFlow_2" sourceElement="BPMNShape_ServiceTask_1" targetElement="BPMNShape_Participant_2">
+        <di:waypoint xsi:type="dc:Point" x="505.0" y="201.0"/>
+        <di:waypoint xsi:type="dc:Point" x="505.0" y="275.0"/>
+        <di:waypoint xsi:type="dc:Point" x="362.0" y="275.0"/>
+        <di:waypoint xsi:type="dc:Point" x="362.0" y="322.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_22">
+          <dc:Bounds height="15.0" width="32.0" x="417.0" y="276.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
