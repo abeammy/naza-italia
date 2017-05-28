@@ -102,9 +102,6 @@ def Message processData(Message message) {
 	messageLog.setStringProperty("Logging#ex.getMessage()", strFaultString);
 	messageLog.setStringProperty("Logging#ex.getFaultCode()", strFaultCode);
 	messageLog.setStringProperty("Logging#ex.getRole()", strFaultActor);
-
-	//messageLog.setStringProperty("Logging#STATUS_TEXT", strStatusText);
-
 	messageLog.addAttachmentAsString("3#Exception/Fault", strFault, "text/xml");
 
 	return message;
