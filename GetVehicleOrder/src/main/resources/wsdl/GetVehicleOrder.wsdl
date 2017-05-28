@@ -55,21 +55,31 @@
 					</xsd:attribute>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="GetVehicleOrderResponse">
-				<xsd:complexType>
+			<xsd:element name="GetVehicleOrderResponse" type="tns:GetVehicleOrderResponseType">
+				
+			</xsd:element>
+			
+			<xsd:complexType name="GetVehicleOrderResponseType">
+				<xsd:choice>						
 					<xsd:sequence>
-						<xsd:element name="MessageGuid" type="xsd:string"
+						<xsd:element name="MessageGuid"
+							type="xsd:string" maxOccurs="1" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="BODID" type="xsd:string"
 							maxOccurs="1" minOccurs="0">
 						</xsd:element>
-						<xsd:element name="BODID" type="xsd:string" maxOccurs="1"
-							minOccurs="0">
-						</xsd:element>
-						<xsd:element name="FerrariVehicleOrder" type="tns:FerrariVehicleOrderType"
-							maxOccurs="unbounded" minOccurs="1" />
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
 
+						<xsd:element name="FerrariVehicleOrder"
+							type="tns:FerrariVehicleOrderType" maxOccurs="unbounded" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:sequence>
+						<xsd:element name="GetVehicleOrderFault" type="tns:GetVehicleOrderFaultType" maxOccurs="1" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:complexType>
+			
 			<xsd:complexType name="FerrariVehicleOrderType">
 				<xsd:sequence>
 
@@ -82,8 +92,11 @@
 				</xsd:sequence>
 			</xsd:complexType>
 
-			<xsd:element name="GetVehicleOrderFault">
-				<xsd:complexType>
+			<xsd:element name="GetVehicleOrderFault" type="tns:GetVehicleOrderFaultType">
+				
+			</xsd:element>
+			
+			<xsd:complexType name="GetVehicleOrderFaultType">
 					<xsd:sequence>
 
 						<xsd:element name="faultcode" type="xsd:string"
@@ -96,9 +109,8 @@
 							maxOccurs="1" minOccurs="0">
 						</xsd:element>
 					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-
+			</xsd:complexType>
+			
 			<xsd:complexType name="FerrariVehicleOrderHeaderType">
 				<xsd:sequence>
 					<xsd:element name="DocumentDateTime" type="xsd:dateTime"
@@ -1278,7 +1290,9 @@
 					</xsd:extension>
 				</xsd:simpleContent>
 			</xsd:complexType>
-		</xsd:schema>
+		
+            
+        </xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="GetVehicleOrderRequest">
 		<wsdl:part element="tns:GetVehicleOrder" name="parameters" />
